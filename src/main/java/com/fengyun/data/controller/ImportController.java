@@ -59,56 +59,56 @@ public class ImportController {
         try{
             JFile jFile = UploadUtils.tranFile(file, path);
             List<ExcelPartyVO> excelPartyVOs = importJFile(jFile);
-            if(excelPartyVOs != null){
-                for(ExcelPartyVO excelPartyVO:excelPartyVOs){
-                    //PartyPersonTest表
-                    PartyPersonTest partyPerson = new ExcelPartyVO();
-                    UUID pid = UUID.randomUUID();
-                    personId = pid.toString();
-                    partyPerson.setId(personId);
-                    partyPerson.setAddress(excelPartyVO.getOccupation());//地址
-                    partyPerson.setEducation(excelPartyVO.getDegree());//学位
-                    partyPerson.setMobilePhone(excelPartyVO.getMobile());//手机
-                    partyPerson.setCreateDate(new Date());
-                    partyPerson.setModifyDate(new Date());
-                    partyPerson.setIsAvailable(1);
-                    partyPerson.setVersion(0);
-
-                    //PartyTest表
-                    PartyTest party = new PartyTest();
-                    UUID ppid = UUID.randomUUID();
-                    partyId = ppid.toString();
-                    party.setId(partyId);
-                    party.setPartyType("JC");
-                    party.setName(excelPartyVO.getName());
-                    party.setApproved("2");
-                    party.setPartyPersonId(personId);
-                    party.setLoginName(excelPartyVO.getName());
-                    party.setSource("JYW");
-                    party.setCreateDate(new Date());
-                    party.setModifyDate(new Date());
-                    party.setIsAvailable(1);
-                    party.setVersion(0);
-                    party.setRank("P");
-                    party.setPasswordLogin(excelPartyVO.getPassword());
-
-                    PartyAgentTest partyAgent = new PartyAgentTest();
-                    UUID paid = UUID.randomUUID();
-                    agentId = paid.toString();
-                    partyAgent.setId(agentId);
-                    partyAgent.setPartyId(partyId);
-
-
-
-
-
-
-
-
-
-
-                }
-            }
+//            if(excelPartyVOs != null){
+//                for(ExcelPartyVO excelPartyVO:excelPartyVOs){
+//                    //PartyPersonTest表
+//                    PartyPersonTest partyPerson = new ExcelPartyVO();
+//                    UUID pid = UUID.randomUUID();
+//                    personId = pid.toString();
+//                    partyPerson.setId(personId);
+//                    partyPerson.setAddress(excelPartyVO.getOccupation());//地址
+//                    partyPerson.setEducation(excelPartyVO.getDegree());//学位
+//                    partyPerson.setMobilePhone(excelPartyVO.getMobile());//手机
+//                    partyPerson.setCreateDate(new Date());
+//                    partyPerson.setModifyDate(new Date());
+//                    partyPerson.setIsAvailable(1);
+//                    partyPerson.setVersion(0);
+//
+//                    //PartyTest表
+//                    PartyTest party = new PartyTest();
+//                    UUID ppid = UUID.randomUUID();
+//                    partyId = ppid.toString();
+//                    party.setId(partyId);
+//                    party.setPartyType("JC");
+//                    party.setName(excelPartyVO.getName());
+//                    party.setApproved("2");
+//                    party.setPartyPersonId(personId);
+//                    party.setLoginName(excelPartyVO.getName());
+//                    party.setSource("JYW");
+//                    party.setCreateDate(new Date());
+//                    party.setModifyDate(new Date());
+//                    party.setIsAvailable(1);
+//                    party.setVersion(0);
+//                    party.setRank("P");
+//                    party.setPasswordLogin(excelPartyVO.getPassword());
+//
+//                    PartyAgentTest partyAgent = new PartyAgentTest();
+//                    UUID paid = UUID.randomUUID();
+//                    agentId = paid.toString();
+//                    partyAgent.setId(agentId);
+//                    partyAgent.setPartyId(partyId);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//                }
+//            }
 
             //TODO 将数据转存数据库
             return ReqResult.success("成功");

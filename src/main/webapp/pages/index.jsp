@@ -23,7 +23,7 @@
     <button id="excelScan">浏览</button>
     <button id="excelUpload" onclick="submitExcel();">上传</button>
     
-    <input type="text" id="excelShow" readonly/>
+    <input type="text" id="excelShow2" readonly/>
     <button id="excelScan2">浏览</button>
     <button id="excelUpload2" onclick="submitExcel2();">上传</button>
 

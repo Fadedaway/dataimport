@@ -85,7 +85,7 @@ function  submitExcel2(){
     var excelShow = $("#excelShow2");
 
     if(!!excelShow.val()&& excelShow.val()!=""){
-        var _url = root+"/import/importExcelToDB";
+        var _url = root+"/partyInfo/importPartyInfoFile";
         var form = $("#excelForm2");
         var ajax_option = {
             url : _url,
