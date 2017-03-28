@@ -8,6 +8,7 @@ import java.util.List;
 import javax.naming.SizeLimitExceededException;
 import javax.servlet.http.HttpServletRequest;
 
+import com.fengyun.data.service.ImportPartyInfoService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.spi.LoggerFactory;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -16,6 +17,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,6 +35,9 @@ import com.fengyun.utils.UploadUtils;
 public class ImprotPartyInfoController {
 	
 	private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(ImprotPartyInfoController.class);
+
+	@Autowired
+	private ImportPartyInfoService importPartyInfoService;
 
 	@RequestMapping("/importPartyInfoFile")
 	@ResponseBody
@@ -57,8 +62,9 @@ public class ImprotPartyInfoController {
         try{
             JFile jFile = UploadUtils.tranFile(file, path);
             List<ExcelAgentVO> excelAgentVO = importJFile(jFile);
-
             //TODO 将数据转存数据库
+            importPartyInfoService.saveAgentInfo(excelAgentVO);
+
             return ReqResult.success("成功");
         }catch(Exception e){
             LOGGER.error(e.getMessage(), e);
