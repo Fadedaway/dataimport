@@ -22,9 +22,17 @@
     <input type="text" id="excelShow" readonly/>
     <button id="excelScan">浏览</button>
     <button id="excelUpload" onclick="submitExcel();">上传</button>
+    
+    <input type="text" id="excelShow" readonly/>
+    <button id="excelScan2">浏览</button>
+    <button id="excelUpload2" onclick="submitExcel2();">上传</button>
 
     <form id="excelForm" enctype="multipart/form-data" method="post">
         <input id="excelFile" name="file" type="file"  style="display: none"/>
+        <input type="hidden" name="fileType"  value = "image"/>
+    </form>
+    <form id="excelForm2" enctype="multipart/form-data" method="post">
+        <input id="excelFile2" name="file" type="file"  style="display: none"/>
         <input type="hidden" name="fileType"  value = "image"/>
     </form>
 </body>

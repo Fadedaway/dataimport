@@ -23,10 +23,10 @@ public class LoginPartyServiceImpl implements LoginPartyService {
     @Autowired
     private LoginPartyRepo loginPartyRepo;
 
-    @Override
-    public List<LoginParty> getAllLoginParty() {
-        logger.info(">>>>>>>>>>>>>>>>> 取所有loginparty ");
+	public List<LoginParty> getAllLoginParty() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-        return loginPartyRepo.findAll();
-    }
+   
 }
