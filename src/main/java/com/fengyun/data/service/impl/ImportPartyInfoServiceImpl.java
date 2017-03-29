@@ -39,6 +39,8 @@ public class ImportPartyInfoServiceImpl implements ImportPartyInfoService{
             if (StringUtils.isNotBlank(excelAgentVO.getMobile())){
                 agentInfo.setMobile(excelAgentVO.getMobile());
             }
+            agentInfo.setProvince("1510");
+            agentInfo.setCity("151005");
             agentInfo.setType("0");
 
             agentInfo.setSaasCode("super");
