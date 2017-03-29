@@ -9,7 +9,7 @@ import javax.persistence.Transient;
  * Created by Administrator on 2017/3/28.
  */
 @Entity
-@Table(name = "t_party")
+@Table(name = "t_partyTest")
 public class LoginParty extends BaseAbstractEntity {
 
     /**
