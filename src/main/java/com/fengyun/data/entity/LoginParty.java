@@ -18,7 +18,7 @@ public class LoginParty extends BaseAbstractEntity {
     @Column(name = "party_type")
     private String partyType;
 
-    @Transient
+    @Transient 
     private String partyTypeName;
 
     /**
