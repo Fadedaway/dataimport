@@ -18,14 +18,18 @@
             + path + "/";
 %>
 
-
+<div>
+    <label>Party信息导入：</label>
     <input type="text" id="excelShow" readonly/>
     <button id="excelScan">浏览</button>
     <button id="excelUpload" onclick="submitExcel();">上传</button>
-    
+</div>
+<div>
+    <label>AgentInfo信息导入：</label>
     <input type="text" id="excelShow2" readonly/>
     <button id="excelScan2">浏览</button>
     <button id="excelUpload2" onclick="submitExcel2();">上传</button>
+</div>
 
     <form id="excelForm" enctype="multipart/form-data" method="post">
         <input id="excelFile" name="file" type="file"  style="display: none"/>

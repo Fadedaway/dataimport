@@ -64,6 +64,7 @@ public class ImprotPartyInfoController {
             List<ExcelAgentVO> excelAgentVO = importJFile(jFile);
             //TODO 将数据转存数据库
             importPartyInfoService.saveAgentInfo(excelAgentVO);
+            LOGGER.info(">>>>>>>>>>>>>>>>> 向AgentInfo 中导入数据完成！");
 
             return ReqResult.success("成功");
         }catch(Exception e){
@@ -109,11 +110,13 @@ public class ImprotPartyInfoController {
                         String name = getCellValue(row.getCell(1));
                         String number = getCellValue(row.getCell(2));
                         String company = getCellValue(row.getCell(3));
+                        String mobile = getCellValue(row.getCell(4));
 
                         ExcelAgentVO excelAgentVO = new ExcelAgentVO();
                         excelAgentVO.setName(name);
                         excelAgentVO.setNumber(number);
                         excelAgentVO.setCompany(company);
+                        excelAgentVO.setMobile(mobile);
                         list.add(excelAgentVO);
                     }
                 } catch (Exception e) {

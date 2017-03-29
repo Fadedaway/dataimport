@@ -8,6 +8,8 @@ public class ExcelAgentVO {
 	
 	private String number;
 
+	private String mobile;
+
 	public String getName() {
 		return name;
 	}
@@ -31,7 +33,12 @@ public class ExcelAgentVO {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-	
-	
 
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 }
