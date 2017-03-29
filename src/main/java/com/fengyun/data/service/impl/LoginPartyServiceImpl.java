@@ -53,7 +53,7 @@ public class LoginPartyServiceImpl implements LoginPartyService {
              for(ExcelPartyVO excelPartyVO:excelPartyVOs){
                  //PartyPersonTest表
                  PartyPerson partyPerson = new PartyPerson();
-                 partyPerson.setAddress(excelPartyVO.getOccupation());//地址
+                 partyPerson.setAddress(excelPartyVO.getAddress());//地址
                  partyPerson.setEducation(excelPartyVO.getDegree());//学位
                  partyPerson.setMobilePhone(excelPartyVO.getMobile());//手机
                  partyPerson.setCreateDate(new Date());
