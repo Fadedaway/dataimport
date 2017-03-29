@@ -48,6 +48,8 @@ public class PartyPerson extends BaseAbstractEntity {
 	@Column(name = "education")
 	private String education;
 	
+	@Column(name = "xueli")
+	private String xueli;
 	
 	/*学位*/
 	@Column(name = "degree")
@@ -349,4 +351,12 @@ public class PartyPerson extends BaseAbstractEntity {
 		this.idPhoto = idPhoto;
 	}
 
+	public String getXueli() {
+		return xueli;
+	}
+
+	public void setXueli(String xueli) {
+		this.xueli = xueli;
+	}
+	
 }
