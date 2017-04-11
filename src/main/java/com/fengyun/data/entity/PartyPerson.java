@@ -16,7 +16,7 @@ import javax.persistence.Transient;
  *
  */
 @Entity
-@Table(name = "t_party_personTest")
+@Table(name = "t_party_person_test")
 public class PartyPerson extends BaseAbstractEntity {
 	
 	@Column(name = "id_num")

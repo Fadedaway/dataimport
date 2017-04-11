@@ -12,7 +12,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "t_party_saascodeTest")
+@Table(name = "t_party_saascode_test")
 public class PartySaasCode extends BaseAbstractEntity {
 
 	/**

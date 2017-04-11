@@ -110,12 +110,15 @@ public class ImportController {
                         String name = getCellValue(row.getCell(1));
                         String number = getCellValue(row.getCell(2));
                         String company = getCellValue(row.getCell(3));
-                        String password = getCellValue(row.getCell(4));
+                        //String password = getCellValue(row.getCell(4));
                         String mobile = getCellValue(row.getCell(5));
+                        String idNum = getCellValue(row.getCell(6));
                         String degree = getCellValue(row.getCell(7));
                         String occupation = getCellValue(row.getCell(8));
                         String address = getCellValue(row.getCell(9));
 
+
+                        String password = StringUtils.isNotBlank(idNum)?idNum.substring(idNum.length()-6):"123456";
 
                         ExcelPartyVO excelPartyVO = new ExcelPartyVO();
                         excelPartyVO.setName(name);
