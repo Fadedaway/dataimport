@@ -107,18 +107,18 @@ public class ImportController {
                 try {
                     HSSFRow row = sheet.getRow(i);
                     if(row != null){
-                        String name = getCellValue(row.getCell(1));
-                        String number = getCellValue(row.getCell(2));
+                        String name = getCellValue(row.getCell(2));
+                        String number = getCellValue(row.getCell(1));
                         String company = getCellValue(row.getCell(3));
-                        //String password = getCellValue(row.getCell(4));
-                        String mobile = getCellValue(row.getCell(5));
-                        String idNum = getCellValue(row.getCell(6));
+                        String password = "123456";
+                        String mobile = getCellValue(row.getCell(6));
+                        //String idNum = getCellValue(row.getCell(6));
                         String degree = getCellValue(row.getCell(7));
-                        String occupation = getCellValue(row.getCell(8));
+                        //String occupation = getCellValue(row.getCell(8));
                         String address = getCellValue(row.getCell(9));
 
 
-                        String password = StringUtils.isNotBlank(idNum)?idNum.substring(idNum.length()-6):"123456";
+                        //String password = StringUtils.isNotBlank(idNum)?idNum.substring(idNum.length()-6):"123456";
 
                         ExcelPartyVO excelPartyVO = new ExcelPartyVO();
                         excelPartyVO.setName(name);
@@ -129,7 +129,7 @@ public class ImportController {
                         }
                         excelPartyVO.setMobile(mobile);
                         excelPartyVO.setDegree(degree);
-                        excelPartyVO.setOccupation(occupation);
+                        //excelPartyVO.setOccupation(occupation);
                         excelPartyVO.setAddress(address);
                         excelPartyVO.setProvince("1510");
                         excelPartyVO.setCity("151005");

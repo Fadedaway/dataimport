@@ -107,10 +107,10 @@ public class ImprotPartyInfoController {
                 try {
                     HSSFRow row = sheet.getRow(i);
                     if(row != null){
-                        String name = getCellValue(row.getCell(1));
-                        String number = getCellValue(row.getCell(2));
+                        String name = getCellValue(row.getCell(2));
+                        String number = getCellValue(row.getCell(1));
                         String company = getCellValue(row.getCell(3));
-                        String mobile = getCellValue(row.getCell(4));
+                        String mobile = getCellValue(row.getCell(6));
 
                         ExcelAgentVO excelAgentVO = new ExcelAgentVO();
                         excelAgentVO.setName(name);
