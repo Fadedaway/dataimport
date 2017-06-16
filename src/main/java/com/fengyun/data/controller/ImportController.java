@@ -24,6 +24,7 @@ import javax.naming.SizeLimitExceededException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.lang.invoke.SwitchPoint;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -112,12 +113,20 @@ public class ImportController {
                         String company = getCellValue(row.getCell(3));
                         String password = "123456";
                         String mobile = getCellValue(row.getCell(6));
+                        String sex = getCellValue(row.getCell(5));
+                        String duty = getCellValue(row.getCell(4));
+                        String email = getCellValue(row.getCell(11));
                         //String idNum = getCellValue(row.getCell(6));
                         String degree = getCellValue(row.getCell(7));
                         //String occupation = getCellValue(row.getCell(8));
                         String address = getCellValue(row.getCell(9));
 
-
+                        sex = StringUtils.isNotBlank(sex)?"":sex;
+                        switch (sex){
+                            case "男" : sex = "M"; break;
+                            case "女" : sex = "F"; break;
+                            default:sex = "";break;
+                        }
                         //String password = StringUtils.isNotBlank(idNum)?idNum.substring(idNum.length()-6):"123456";
 
                         ExcelPartyVO excelPartyVO = new ExcelPartyVO();
@@ -129,6 +138,9 @@ public class ImportController {
                         }
                         excelPartyVO.setMobile(mobile);
                         excelPartyVO.setDegree(degree);
+                        excelPartyVO.setSex(sex);
+                        excelPartyVO.setDuty(duty);
+                        excelPartyVO.setEmail(email);
                         //excelPartyVO.setOccupation(occupation);
                         excelPartyVO.setAddress(address);
                         excelPartyVO.setProvince("1510");

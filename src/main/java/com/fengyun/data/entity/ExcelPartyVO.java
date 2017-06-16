@@ -11,6 +11,45 @@ public class ExcelPartyVO {
     private String name;
 
     /**
+     * 性别
+     */
+    private String sex;
+
+    /**
+     * 职务
+     */
+    private String duty;
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getDuty() {
+        return duty;
+    }
+
+    public void setDuty(String duty) {
+        this.duty = duty;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * 邮箱
+     */
+    private String email;
+
+    /**
      * 证书编号
      */
     private String number;

@@ -62,6 +62,10 @@ public class LoginPartyServiceImpl implements LoginPartyService {
                  partyPerson.setIsAvailable(1);
                  partyPerson.setVersion(0);
                  partyPerson.setXueli(excelPartyVO.getDegree());
+                 partyPerson.setAgencyName(excelPartyVO.getCompany());
+                 partyPerson.setEmail(excelPartyVO.getEmail());
+                 partyPerson.setDuty(excelPartyVO.getDuty());
+                 partyPerson.setGender(excelPartyVO.getSex());
                  if(StringUtils.isNotBlank(excelPartyVO.getDegree())){
                 	 switch(excelPartyVO.getDegree()){
                 	 case "MBA":partyPerson.setEducation("03");break;
